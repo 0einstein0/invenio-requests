@@ -44,7 +44,7 @@ export class RequestActionModal extends Component {
       <Overridable id="InvenioRequests.RequestActionModal.layout" {...this.props}>
         {/*currentModalOpen prevents mounting multiple instances*/}
         {currentModalOpen && (
-          <Modal role="dialog" id={modalId} open={currentModalOpen}>
+          <Modal aria-label={action} role="dialog" id={modalId} open={currentModalOpen}>
             <Modal.Header as="h2" className="capitalize-first-char">
               <Overridable id={`RequestActionModal.title.${action}`}>
                 <Trans defaults="{{action}} request" values={{ action: action }} />
