@@ -83,6 +83,7 @@ class TimelineCommentEvent extends Component {
                     icon="ellipsis horizontal"
                     className="right-floated"
                     direction="left"
+                    aria-label={i18next.t("Actions")}
                   >
                     <Dropdown.Menu>
                       {canUpdate && (
