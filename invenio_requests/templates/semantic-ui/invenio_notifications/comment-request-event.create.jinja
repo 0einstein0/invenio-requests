@@ -27,7 +27,7 @@
         <td>{{ _("<b>@{user_name}</b> commented on <b>{request_title}</b>:").format(user_name=event_creator_name, request_title=request_title) }}</td>
     </tr>
     <tr>
-        <td><em>"{{ request_event_content }}"</em></td>
+        <td><em>{{ request_event_content }}</em></td>
     </tr>
     <tr>
         <td><a href="{{ request_link }}" class="button">{{ _("Check out the request")}}</a></td>
