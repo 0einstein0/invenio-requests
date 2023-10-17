@@ -108,7 +108,7 @@ class TimelineCommentEvent extends Component {
                   </Feed.Date>
                 </Feed.Summary>
 
-                <Feed.Extra text={!isEditing}>
+                <Feed.Extra className="ck-content" text={!isEditing}>
                   {error && <Error error={error} />}
 
                   {isEditing ? (
