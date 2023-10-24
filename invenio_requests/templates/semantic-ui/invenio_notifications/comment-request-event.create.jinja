@@ -24,7 +24,7 @@
 {%- block html_body -%}
 <table style="font-family:'Lato',Helvetica,Arial,sans-serif;border-spacing:15px">
     <tr>
-        <td>{{ _("<b>@{user_name}</b> commented on <b>{request_title}</b>:").format(user_name=event_creator_name, request_title=request_title) }}</td>
+        <td>{{ _("'@{user_name}' commented on '{request_title}':").format(user_name=event_creator_name, request_title=request_title) }}</td>
     </tr>
     <tr>
         <td><em>{{ request_event_content }}</em></td>
