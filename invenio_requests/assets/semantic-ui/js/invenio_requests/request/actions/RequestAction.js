@@ -5,7 +5,7 @@
 // under the terms of the MIT License; see LICENSE file for more details.
 
 import { RequestActionContext } from "@js/invenio_requests/request/actions/context";
-import FormattedInputEditor from "../../components/FormattedInputEditor";
+import { RichEditor } from "react-invenio-forms";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Overridable from "react-overridable";
@@ -23,7 +23,7 @@ export class RequestAction extends Component {
   }
 
   onCommentChange = (event, editor) => {
-    this.setState({ actionComment: editor.getData() });
+    this.setState({ actionComment: editor.getContent() });
   };
 
   handleActionClick = () => {
@@ -69,7 +69,7 @@ export class RequestAction extends Component {
               <Modal.Description>
                 {i18next.t("Add comment (optional)")}
                 <Divider hidden />
-                <FormattedInputEditor onChange={this.onCommentChange} />
+                <RichEditor onChange={this.onCommentChange} />
               </Modal.Description>
             </Modal.Content>
           </RequestActionModal>

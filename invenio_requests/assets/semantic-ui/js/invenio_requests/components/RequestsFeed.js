@@ -12,7 +12,7 @@ import { Container, Feed, Icon } from "semantic-ui-react";
 // Wrapper component for the custom styles being used inside the request events timeline
 // Enables centralizing the styles and abstracts it away from the template
 export const RequestsFeed = ({ children }) => (
-  <Container className="requests-feed-container ml-0-mobile mr-0-mobile">
+  <Container className="requests-feed-container rich-input-content ml-0-mobile mr-0-mobile">
     <Feed>{children}</Feed>
   </Container>
 );
@@ -32,7 +32,7 @@ export const RequestEventInnerContainer = ({ children, isEvent }) => (
 export const RequestEventAvatarContainer = ({ src, ...uiProps }) => (
   <div className="requests-avatar-container">
     {src && <Image src={src} rounded avatar {...uiProps} />}
-    {!src && <Icon size="large" name="user circle outline"/>}
+    {!src && <Icon size="large" name="user circle outline" />}
   </div>
 );
 

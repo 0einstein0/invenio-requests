@@ -12,7 +12,7 @@ import Overridable from "react-overridable";
 import { Container, Dropdown, Feed, Icon } from "semantic-ui-react";
 import { CancelButton, SaveButton } from "../components/Buttons";
 import Error from "../components/Error";
-import FormattedInputEditor from "../components/FormattedInputEditor";
+import { RichEditor } from "react-invenio-forms";
 import RequestsFeed from "../components/RequestsFeed";
 import { TimelineEventBody } from "../components/TimelineEventBody";
 import { toRelativeTime } from "react-invenio-forms";
@@ -108,16 +108,16 @@ class TimelineCommentEvent extends Component {
                   </Feed.Date>
                 </Feed.Summary>
 
-                <Feed.Extra className="ck-content" text={!isEditing}>
+                <Feed.Extra text={!isEditing}>
                   {error && <Error error={error} />}
 
                   {isEditing ? (
-                    <FormattedInputEditor
-                      data={event?.payload?.content}
-                      onChange={(event, editor) =>
-                        this.setState({ commentContent: editor.getData() })
-                      }
-                      minHeight="100%"
+                    <RichEditor
+                      value={event?.payload?.content}
+                      onChange={(event, editor) => {
+                        this.setState({ commentContent: editor.getContent() });
+                      }}
+                      minHeight={150}
                     />
                   ) : (
                     <TimelineEventBody
