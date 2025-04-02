@@ -65,8 +65,12 @@ export const ComputerTabletRequestItem = ({
             />
           </div>
         </Item.Extra>
-        <Item.Header className={`truncate-lines-2 ${result.is_closed && "mt-5"}`}>
-          <a className="header-link" href={detailsURL}>
+        <Item.Header
+          className={`truncate-lines-2 theme-primary-text ${
+            result.is_closed && "mt-5"
+          }`}
+        >
+          <a className="header-link " href={detailsURL}>
             {result.title}
           </a>
         </Item.Header>
